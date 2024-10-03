@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup - Skill Certification Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header */
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        /* Main content */
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #333;
+        }
+
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .error {
+            color: red;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .nav-link {
+            color: #4CAF50;
+            text-align: center;
+            display: block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <h1>Skill Certification Tracker - Signup</h1>
+    </div>
+
+    <!-- Signup Form -->
+    <div class="container">
+        <h2>Signup</h2>
+        <div id="errorMessage" class="error"></div>
+        <form id="signupForm" onsubmit="handleSignup(event)">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Enter your username" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password" required>
+
+            <button type="submit">Signup</button>
+        </form>
+
+        <a href="login.html" class="nav-link">Already have an account? Login here</a>
+    </div>
+
+    <script>
+        // Function to handle the signup form submission
+        function handleSignup(event) {
+            event.preventDefault(); // Prevent form submission
+            
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('errorMessage');
+
+            // Basic validation to check empty fields
+            if (username === '' || email === '' || password === '') {
+                errorMessage.textContent = 'All fields are required.';
+                return;
+            }
+
+            // Check if localStorage is available
+            if (typeof(Storage) !== "undefined") {
+                try {
+                    // Save the user credentials to localStorage
+                    localStorage.setItem('username', username);
+                    localStorage.setItem('email', email);
+                    localStorage.setItem('password', password);
+
+                    // Redirect to the login page after successful signup
+                    window.location.href = 'login.html';
+                } catch (e) {
+                    errorMessage.textContent = 'Error saving data. Please try again.';
+                    console.error('Error:', e);
+                }
+            } else {
+                errorMessage.textContent = 'LocalStorage is not supported by your browser.';
+            }
+        }
+    </script>
+
+</body>
+</html>

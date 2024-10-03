@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Certification Tracker - View Certificates</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://blog.imocha.io/hubfs/skills-tracking-software.webp'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header Section with Login and Signup */
+        .header {
+            background-color: rgba(76, 175, 80, 0.9); /* Semi-transparent header */
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            position: relative;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .nav {
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 16px;
+            border: 2px solid white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background-color: white;
+            color: #4CAF50;
+        }
+
+        /* Container and Grid for Certificates */
+        .container {
+            margin: 20px;
+            max-width: 1200px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent container */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h2 {
+            color: #333;
+            text-align: center;
+        }
+
+        .certificates-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .certificate-card {
+            width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .certificate-card:hover {
+            transform: scale(1.05);
+        }
+
+        .certificate-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .certificate-card .details {
+            padding: 15px;
+        }
+
+        .certificate-card h3 {
+            margin: 0 0 10px;
+            font-size: 18px;
+            color: #4CAF50;
+        }
+
+        .certificate-card p {
+            margin: 0;
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <div class="header">
+        <h1>Skill Certification Tracker</h1>
+        <div class="nav">
+            <a href="login.html" class="nav-link">Login</a>
+            <a href="signup.html" class="nav-link">Signup</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h2>Manage Your Certifications</h2>
+        <div class="certificates-grid">
+            <!-- Certificate Card 1 -->
+            <div class="certificate-card">
+                <img src="images\SPC One.jpg" alt="Data Science Certification">
+                <div class="details">
+                    <h3>Data Science Certification</h3>
+                    <p>Issued by: Coursera</p>
+                    <p>Expiry Date: 2025-06-30</p>
+                </div>
+            </div>
+
+            <!-- Certificate Card 2 -->
+            <div class="certificate-card">
+                <img src="images\SPC Two.jpg" alt="AI Specialist Certification">
+                <div class="details">
+                    <h3>AI Specialist Certification</h3>
+                    <p>Issued by: Udacity</p>
+                    <p>Expiry Date: 2026-01-15</p>
+                </div>
+            </div>
+
+            <!-- Certificate Card 3 -->
+            <div class="certificate-card">
+                <img src="images\SPC Three.jpg" alt="Cloud Computing Certification">
+                <div class="details">
+                    <h3>Cloud Computing Certification</h3>
+                    <p>Issued by: AWS</p>
+                    <p>Expiry Date: 2024-11-22</p>
+                </div>
+            </div>
+
+            <!-- Certificate Card 4 -->
+            <div class="certificate-card">
+                <img src="images\SPC Four.jpg" alt="Microsoft Azure Certification">
+                <div class="details">
+                    <h3>Microsoft Azure Certification</h3>
+                    <p>Issued by: Microsoft</p>
+                    <p>Expiry Date: 2025-12-31</p>
+                </div>
+            </div>
+
+            <!-- Certificate Card 5 (RPA Certification) -->
+            <div class="certificate-card">
+                <img src="images\SPC FIVE.jpg" alt="RPA Certification">
+                <div class="details">
+                    <h3>RPA Certification</h3>
+                    <p>Issued by: UiPath</p>
+                    <p>Expiry Date: 2026-03-15</p>
+                </div>
+            </div>
+
+            <!-- Certificate Card 6 (Red Hat Certification) -->
+            <div class="certificate-card">
+                <img src="images\SPC SIX.jpg" alt="Red Hat Certification">
+                <div class="details">
+                    <h3>Red Hat Certification</h3>
+                    <p>Issued by: Red Hat</p>
+                    <p>Expiry Date: 2025-09-10</p>
+                </div>
+            </div>
+
+            <!-- Add more certificates as needed -->
+        </div>
+    </div>
+
+</body>
+</html>
